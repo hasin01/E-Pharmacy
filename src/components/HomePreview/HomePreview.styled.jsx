@@ -23,6 +23,7 @@ export const HomeWrapperImg = styled.div`
   align-items: center;
 `;
 
+
 export const HomeWrapperSectionTitle = styled.h1`
   color: rgb(255, 255, 255);
   font-size: 74px;
@@ -45,85 +46,78 @@ export const HomeWrapperSectionDesc = styled.p`
   max-width: 200px;
 `;
 
-// Добавимо медиазапрос для адаптивности
-export const HomeWrapperSectionTitle = styled.h1`
-  color: rgb(255, 255, 255);
-  font-size: 74px;
-  font-weight: 600;
-  line-height: 74px;
-  position: absolute;
-  top: 20%; 
-  left: 10%; 
-  max-width: 609px; 
-  @media (max-width: 768px) {
-    font-size: 40px;
-    line-height: 48px;
-  }
+export const HomeMain = styled.div`
+
 `;
 
-export const HomeMain = styled.div``;
+
+
 
 export const HomeBanersList = styled.ul`
-  display: flex;
-  justify-content: space-around;
+display: flex;
+justify-content: space-around;
 `;
+
 
 export const HomeBanersCardPercentWrapper = styled.div`
-  display: flex;
-  align-items: baseline;
-  gap: 28px;
+display: flex;
+align-items: baseline;
+gap: 28px;
 `;
 
+
+
+
 export const HomeBanersListItem = styled.li`
-  box-sizing: border-box;
-  border: 1.15px solid rgb(241, 241, 241);
-  border-radius: 27px;
-  box-shadow: 0px -1px 13.86px 0px rgba(29, 30, 33, 0.02);
-  background: rgb(253, 253, 253);
-  padding: 18px 100px 18px 18px;
+box-sizing: border-box;
+border: 1.15px solid rgb(241, 241, 241);
+border-radius: 27px;
+box-shadow: 0px -1px 13.86px 0px rgba(29, 30, 33, 0.02);
+background: rgb(253, 253, 253);
+padding: 18px 100px 18px  18px ;
 `;
 
 export const HomeBanersCardWarperTitle = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 13px;
-  padding-bottom: 14px;
+display: flex;
+align-items: center;
+gap: 13px;
+padding-bottom: 14px;
 `;
+
 
 export const HomeBanersCardSpan = styled.span`
-  color: rgb(89, 177, 122);
-  font-size: 28px;
-  font-weight: 400;
-  line-height: 28px;
-  background: rgba(231, 241, 237, 0.4);
-  padding: 23px;
-  border-radius: 100%;
-  display: flex;
-  align-items:center;
-  justify-content: center;
-  width: 74px;
+color: rgb(89, 177, 122);
+font-size: 28px;
+font-weight: 400;
+line-height: 28px;
+background: rgba(231, 241, 237, 0.4);
+padding: 23px;
+border-radius: 100%;
+display: flex;
+align-items:center ;
+justify-content: center;
+width: 74px;
 `;
-
 export const HomeBanersCardTitle = styled.h4`
-  color: rgb(37, 37, 57);
-  font-size: 20px;
-  font-weight: 500;line-height: 140%;
-`;
+color: rgb(37, 37, 57);
+font-size: 20px;
+font-weight: 500;
+line-height: 140%;
 
+`;
 export const HomeBanersCardPercent = styled.p`
-  color: rgb(37, 37, 57);
-  font-size: 36px;
-  font-weight: 500;
-  line-height: 140%;
+color: rgb(37, 37, 57);
+font-size: 36px;
+font-weight: 500;
+line-height: 140%;
 `;
 
 export const HomeBanersCardButton = styled.button`
-  color: rgb(147, 147, 154);
-  font-size: 13px;
-  font-weight: 400;
-  line-height: 140%;
+color: rgb(147, 147, 154);
+font-size: 13px;
+font-weight: 400;
+line-height: 140%;
 `;
-
 export const HomeSectionStore = styled.div`
   color: rgb(147, 147, 154);
   font-size: 13px;
@@ -147,6 +141,5 @@ export const HomeSectionStoreDesc = styled.p`
   font-weight: 400;
   text-align: center;
   line-height: 20px;
-  margin-bottom: 64px; 
+  margin-bottom: 64px;
 `;
-

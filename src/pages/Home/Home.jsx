@@ -1,10 +1,12 @@
-import React from 'react'
+import React from "react";
+import HomePreview from "../../components/HomePreview/HomePreview";
 
- const Home = () => {
+const Home = () => {
   return (
-    <div>Home</div>
-  )
-}
-
+    <>
+      <HomePreview />
+    </>
+  );
+};
 
 export default Home;

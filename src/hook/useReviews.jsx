@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { getFirestore, collection, getDocs, limit, query } from "firebase/firestore";
+import { getFirestore, collection, getDocs, query } from "firebase/firestore";
 import app from "../fierbase/fierbase";
 
 const useReviews = () => {

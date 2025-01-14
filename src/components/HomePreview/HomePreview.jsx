@@ -17,18 +17,24 @@ import {
   HomeWrapperSection,
   HomeWrapperSectionDesc,
   HomeWrapperSectionTitle,
+  PromoSectionDescr,
+  PromoSectionImg,
+  PromoSectionTitle,
+  PromoSectionWrapper,
+  PromoSectionWrapperTitle,
 } from "./HomePreview.styled";
 import MedicineStoreCardComponent from "../PromoBanners/PromoBanners"; // Renamed import for clarity
 
-import { HeaderListAythButtonRegiste, PromoSectionDescr, PromoSectionImg, PromoSectionTitle, PromoSectionWrapper, PromoSectionWrapperTitle } from "../Header/Header.styled";
 import Promoimg from "../../img/PromoImg-1x.png";
 import usePharmacies from "../../hook/usePharmacies";
 import { PiLightning } from "react-icons/pi";
 import Reviews from "../Reviews/Reviews";
+import { HeaderListAythButtonRegiste } from "../Header/Header.styled";
 const HomePreview = () => {
 
 
-  const pharmacies = usePharmacies();
+  const [pharmacies, setLimitStore] = usePharmacies(6);
+
   return (
     <>
       <HomeWrapperSection>

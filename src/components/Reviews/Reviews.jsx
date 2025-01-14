@@ -5,7 +5,6 @@ import { HomeReviewsCardDesc, HomeReviewsCardList, HomeReviewsCardTitle, HomeRev
 
 const Reviews = () => {
   const fetchReviews = useReviews();
-  console.log(fetchReviews);
 
   return (
     <>

@@ -1,8 +1,11 @@
 import React from 'react'
+import MedicineProductFilter from '../../components/MedicineProductFilter/MedicineProductFilter'
 
 const Medicine = () => {
   return (
-    <div>Medicine</div>
+    <div>
+    <MedicineProductFilter/>
+    </div>
   )
 }
 

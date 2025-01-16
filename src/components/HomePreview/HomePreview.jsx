@@ -26,14 +26,27 @@ import {
 import MedicineStoreCardComponent from "../PromoBanners/PromoBanners"; // Renamed import for clarity
 
 import Promoimg from "../../img/PromoImg-1x.png";
-import usePharmacies from "../../hook/usePharmacies";
 import { PiLightning } from "react-icons/pi";
 import Reviews from "../Reviews/Reviews";
 import { HeaderListAythButtonRegiste } from "../Header/Header.styled";
+import { useDispatch } from "react-redux";
+import { useEffect } from "react";
+import { fetchStoreCard } from "../../redux/cardStore/cardStore-operations";
+import { useCardsStore, useErrorCardsStore, useStatusCardsStore } from "../../redux/cardStore/cardStore-selectors";
 const HomePreview = () => {
 
 
-  const [pharmacies, setLimitStore] = usePharmacies(6);
+
+  const dispatch = useDispatch()
+    const cards = useCardsStore();
+    const status = useStatusCardsStore();
+    const error = useErrorCardsStore();
+useEffect(() => {
+  dispatch(fetchStoreCard())  
+  return () => {
+    
+  };
+}, []);
 
   return (
     <>
@@ -102,8 +115,8 @@ const HomePreview = () => {
                 marginBottom: "120px",
               }}
             >
-              {pharmacies.length > 0 ? (
-                pharmacies.map((item) => (
+              {cards.length > 0 ? (
+                cards.map((item) => (
                   <MedicineStoreCardComponent
                     key={item.id}
                     name={item.name}

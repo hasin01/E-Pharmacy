@@ -1,15 +1,24 @@
 import styled from 'styled-components';
-import usePharmacies from '../../hook/usePharmacies';
 import MedicineStoreCardComponent from "../PromoBanners/PromoBanners"; // Renamed import for clarity
 import { Container } from "../Container/container.styled";
+import { useDispatch } from 'react-redux';
+import { fetchStoreCard } from '../../redux/cardStore/cardStore-operations';
+import { useEffect } from 'react';
+import { useCardsStore, useErrorCardsStore, useStatusCardsStore } from '../../redux/cardStore/cardStore-selectors';
 
 const StoreList = () => {
-  const [pharmacies, setLimitStore] = usePharmacies(9);
-
+  const dispatch = useDispatch()
+    const cards = useCardsStore();
+    const status = useStatusCardsStore();
+    const error = useErrorCardsStore();
+useEffect(() => {
+  dispatch(fetchStoreCard())  
+  return () => {
+    
+  };
+}, []);
   return (
     <Container>
-
-
    <MedicineStoreWrapper>
    <MedicineStoreTitle>Medicine store</MedicineStoreTitle>
       <ul
@@ -22,8 +31,8 @@ const StoreList = () => {
           alignItems: "center",
         }}
       >
-        {pharmacies.length > 0 ? (
-          pharmacies.map((item) => (
+        {cards.length > 0 ? (
+          cards.map((item) => (
             <MedicineStoreCardComponent
               key={item.id}
               name={item.name}

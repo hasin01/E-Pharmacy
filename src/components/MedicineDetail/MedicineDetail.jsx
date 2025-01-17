@@ -1,10 +1,13 @@
-import React from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { useCardsId } from "../../redux/cardMedichine/cardMedichine-selectors";
-import MedicineProduct from "../MedicineProduct/MedicineProduct";
+import CardDetalis from "../CardDetalis/CardDetalis";
 import { useDispatch } from "react-redux";
 import { useEffect } from "react";
 import { fetchCardDetalis } from "../../redux/cardMedichine/cardMedichine-operations";
+import DescriptionDetail from "../DescriptionDetail/DescriptionDetail";
+import styled from "styled-components";
+import { Container } from "../Container/container.styled";
+import { MedicineStoreCardButton } from "../PromoBanners/PromoBanners.styled";
 
 const MedicineProductDetail = () => {
   const { name } = useParams(); 
@@ -25,17 +28,34 @@ const MedicineProductDetail = () => {
 
   const cardDetalis = cardId[0];
   return (
-    <div>
-      <button onClick={() => navigate(-1)}>Back</button>
+    <Container>
+      <MedicineStoreCardButton style={{marginTop:"20px"}} onClick={() => navigate(-1)}>Back</MedicineStoreCardButton>
 
-      <MedicineProduct
+    <MedicineProductDetailWrapper>
+
+      <CardDetalis
         stock={cardDetalis.stock}
         name={cardDetalis.name}
         suppliers={cardDetalis.suppliers}
         photo={cardDetalis.photo}
       />
-    </div>
+
+      <DescriptionDetail/>
+    </MedicineProductDetailWrapper>
+    </Container>
+
   );
 };
 
 export default MedicineProductDetail;
+
+
+export const MedicineProductDetailWrapper = styled.div`
+  display: flex;
+  gap: 20px;
+  margin-top: 100px;
+  margin-bottom: 100px;
+
+  
+`;
+

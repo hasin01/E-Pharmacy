@@ -7,7 +7,9 @@ import Store from './pages/Store/Store';
 import NotFound from './pages/NotFound/NotFound';
 import Layout from "./components/Layout/Layout";
 import MedicineProductDetail from "./components/MedicineDetail/MedicineDetail";
+import Modal from 'react-modal';
 
+Modal.setAppElement('#root'); 
 function App() {
   return (
     <Router basename="/E-Pharmacy/">

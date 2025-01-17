@@ -28,7 +28,7 @@ import MedicineStoreCardComponent from "../PromoBanners/PromoBanners"; // Rename
 import Promoimg from "../../img/PromoImg-1x.png";
 import { PiLightning } from "react-icons/pi";
 import Reviews from "../Reviews/Reviews";
-import { HeaderListAythButtonRegiste } from "../Header/Header.styled";
+import { HeaderListAuthButtonRegister } from "../Header/Header.styled";
 import { useDispatch } from "react-redux";
 import { useEffect } from "react";
 import { fetchStoreCard } from "../../redux/cardStore/cardStore-operations";
@@ -143,9 +143,9 @@ useEffect(() => {
                     our online platform.
                   </PromoSectionDescr>
                 </div>
-                <HeaderListAythButtonRegiste>
+                <HeaderListAuthButtonRegister>
                   Buy medicine
-                </HeaderListAythButtonRegiste>
+                </HeaderListAuthButtonRegister>
               </PromoSectionWrapperTitle>
               <PromoSectionImg src={Promoimg} />
             </PromoSectionWrapper>

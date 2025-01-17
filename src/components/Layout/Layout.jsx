@@ -19,12 +19,13 @@ const Layout = ({ children }) => {
         setHeaderStyles({ backgroundColorHeader: "#ffffff", colorlogo: " rgb(89, 177, 122)",colorlogoText: "black"});    
 
         break;
+        
       case "/Store":
         setHeaderStyles({ backgroundColorHeader: "#ffffff", colorlogo: " rgb(89, 177, 122)",colorlogoText: "black"});    
 
         break;
       default:
-        setHeaderStyles({ backgroundColorHeader: " rgb(89, 177, 122)", colorlogo: "#ffffff",colorlogoText: "#ffffff"});    
+        setHeaderStyles({ backgroundColorHeader: "#ffffff", colorlogo: " rgb(89, 177, 122)",colorlogoText: "black"});      
 
 
         break;

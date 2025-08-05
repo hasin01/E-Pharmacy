@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
-import styled from "styled-components";
 import { useLocation } from "react-router-dom";
 
 const Layout = ({ children }) => {

@@ -135,7 +135,14 @@ dispatch(currentUser())
 <AuthList>
 <AuthItem>
 
-<AuthBasket><AuthBasketNumber>0</AuthBasketNumber><SlBasket color=" rgb(89, 177, 122)" /></AuthBasket>
+
+
+
+<NavLink to='/basket'><AuthBasket><AuthBasketNumber>0</AuthBasketNumber><SlBasket color=" rgb(89, 177, 122)" /></AuthBasket></NavLink>
+
+
+
+ 
 </AuthItem>
 <AuthItem>
 <AuthUser> {userName[0]}

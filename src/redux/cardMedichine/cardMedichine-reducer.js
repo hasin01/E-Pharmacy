@@ -1,10 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { fetchCardDetalis, fetchCardSearch } from "./cardMedichine-operations";
+import {  fetchCardDetalis, fetchCardSearch } from "./cardMedichine-operations";
 
 const cardSlice = createSlice({
   name: "cards",
   initialState: {
     items: [],
+    BasketItems: [],
     status: "idle",
     error: null,
     itemID:[]
@@ -33,7 +34,11 @@ const cardSlice = createSlice({
       .addCase(fetchCardDetalis.rejected, (state, action) => {
         state.status = "failed";
         state.error = action.payload;
-      });
+      })
+ 
+
   },
 });
 export default cardSlice.reducer;
+
+   

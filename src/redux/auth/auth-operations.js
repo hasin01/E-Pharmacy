@@ -1,6 +1,7 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import { getFirestore, collection, doc, setDoc, getDoc } from "firebase/firestore";
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut, updateProfile } from "firebase/auth";
+import { fetchBasket } from "../Basket/basket-operations";
 
 const auth = getAuth();
 const db = getFirestore();
@@ -68,17 +69,24 @@ export const currentUser = createAsyncThunk(
         onAuthStateChanged(auth, resolve, reject);
       });
 
+        
+
       if (user) {
         const userDoc = await getDoc(doc(db, "users", user.uid));
+                   await thunkApi.dispatch(fetchBasket());
         return {
           username: user.displayName, 
           uid: user.uid,
           email: user.email,
+          id: user.id,
           ...userDoc.data(),
+          cards:user.cart || {}
         };
       } else {
         return null;
       }
+
+    
     } catch (error) {
       console.error("Error fetching current user: ", error);
       return thunkApi.rejectWithValue(error.message);

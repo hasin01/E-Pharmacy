@@ -4,7 +4,6 @@ import { currentUser, login, logout, register } from "./auth-operations";
 const AuthSlice = createSlice({
   name: "auth",
   initialState: {
-    basket: [],
     status: "idle",
     error: null,
     name: "",

@@ -5,6 +5,8 @@ import PropTypes from 'prop-types';
 import { MedicineProductCardItemButtonDetalisWrapperDetalis, MedicineProductCardItemDecrDetalis, MedicineProductCardItemDescWrapperDetalis, MedicineProductCardItemDescWrapperTablDetalis, MedicineProductCardItemDetalis, MedicineProductCardItemNameDetalis, MedicineProductCardItemPhotoDetalis, MedicineProductCardItemTablDetalis } from "./CardDetalis.styled";
 import ProductChecker from "../ProductChecker/ProductChecker";
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { addItemBasket } from "../../redux/Basket/basket-operations";
 const CardDetalis = (props) => {
   
   const [count, setCount] = useState(1);
@@ -21,7 +23,17 @@ const CardDetalis = (props) => {
 
 
 
+  const dispatch = useDispatch();
 
+const addCardBasket = (e) => {
+
+console.log(e)
+dispatch(addItemBasket({id:e,price:count}));
+
+
+}
+
+  
 
   return (
     <MedicineProductCardItemDetalis>
@@ -37,7 +49,7 @@ const CardDetalis = (props) => {
         <MedicineProductCardItemButtonDetalisWrapperDetalis>
         <ProductChecker count={count} increment={increment} decrement={decrement}/>
 
-          <MedicineStoreCardButton style={{padding:"14px 30px 14px 30px", borderRadius: "60px"}}>Add to cart</MedicineStoreCardButton>
+          <MedicineStoreCardButton onClick={()=>addCardBasket(props.id)} style={{padding:"14px 30px 14px 30px", borderRadius: "60px"}}>Add to cart</MedicineStoreCardButton>
         </MedicineProductCardItemButtonDetalisWrapperDetalis>
       </MedicineProductCardItemDescWrapperDetalis>
     </MedicineProductCardItemDetalis>

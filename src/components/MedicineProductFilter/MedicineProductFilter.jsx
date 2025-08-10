@@ -149,6 +149,7 @@ const navigate = useNavigate();
                 name={el.name}
                 suppliers={el.suppliers}
                 photo={el.photo}
+                id={el.id}
               />
             ))}{" "}
           </FilterMedicineCardList>

@@ -34,18 +34,29 @@ import CustomModal from "../CustomModal/CustomModal";
 import { BiX } from "react-icons/bi";
 import { useDispatch } from "react-redux";
 import { currentUser, login, logout, register } from "../../redux/auth/auth-operations";
-import { useUserName } from "../../redux/auth/auth-selectors";
+import {  useUserName } from "../../redux/auth/auth-selectors";
+
 import { SlBasket } from "react-icons/sl";
+import { useBasketHeader } from "../../redux/Basket/basket-selectors";
+import { fetchBasket } from "../../redux/Basket/basket-operations";
 const Header = ({ headerStyles }) => {
   const [modalIsOpenLogin, setModalIsOpenLogin] = useState(false);
   const [modalIsOpenRegister, setModalIsOpenRegister] = useState(false);
 
+
+;
   const dispatch = useDispatch();
   const userName = useUserName();
+  const basket = useBasketHeader();
+  
+  useEffect(() => {
+    dispatch(fetchBasket());
+  }, [ dispatch]);
+
   useEffect(() => {
 dispatch(currentUser())
 
-  }, [dispatch]);
+  }, [ dispatch]);
 
 
   const {
@@ -138,7 +149,7 @@ dispatch(currentUser())
 
 
 
-<NavLink to='/basket'><AuthBasket><AuthBasketNumber>0</AuthBasketNumber><SlBasket color=" rgb(89, 177, 122)" /></AuthBasket></NavLink>
+<NavLink to='/basket'><AuthBasket><AuthBasketNumber>{basket.length}</AuthBasketNumber><SlBasket color=" rgb(89, 177, 122)" /></AuthBasket></NavLink>
 
 
 

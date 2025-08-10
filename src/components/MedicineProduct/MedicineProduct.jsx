@@ -2,9 +2,24 @@ import { TiThMenuOutline } from "react-icons/ti";
 import { MedicineProductCardItem, MedicineProductCardItemButtonDetalis, MedicineProductCardItemButtonDetalisWrapper, MedicineProductCardItemDecr, MedicineProductCardItemDescWrapper, MedicineProductCardItemDescWrapperTabl, MedicineProductCardItemName, MedicineProductCardItemPhoto, MedicineProductCardItemTabl } from './MedicineProduct.styled';
 import {MedicineStoreCardButton} from "../PromoBanners/PromoBanners.styled"
 import PropTypes from 'prop-types';
+import { useDispatch } from "react-redux";
+import { addItemBasket } from "../../redux/Basket/basket-operations";
 
 
 const MedicineProduct = (props) => {
+
+
+
+
+  const dispatch = useDispatch();
+
+const addCardBasket = (e) => {
+
+dispatch(addItemBasket({id:e,price:"1"}));
+
+
+}
+
 
   return (
     <MedicineProductCardItem>
@@ -19,7 +34,7 @@ const MedicineProduct = (props) => {
           <MedicineProductCardItemTabl><TiThMenuOutline />{props.stock}</MedicineProductCardItemTabl>
         </MedicineProductCardItemDescWrapperTabl>
         <MedicineProductCardItemButtonDetalisWrapper>
-          <MedicineStoreCardButton>Add to cart</MedicineStoreCardButton>
+          <MedicineStoreCardButton onClick={()=>addCardBasket(props.id)}>Add to cart</MedicineStoreCardButton>
           <MedicineProductCardItemButtonDetalis onClick={props.onClick}>Details</MedicineProductCardItemButtonDetalis>
         </MedicineProductCardItemButtonDetalisWrapper>
       </MedicineProductCardItemDescWrapper>

@@ -38,6 +38,7 @@ const MedicineProductDetail = () => {
         name={cardDetalis.name}
         suppliers={cardDetalis.suppliers}
         photo={cardDetalis.photo}
+        id={cardDetalis.id}
       />
 
       <DescriptionDetail/>
